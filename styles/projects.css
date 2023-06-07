@@ -6,6 +6,7 @@
     border: #ccc;
     margin: 10rem;
     align-items: center;
+    padding: 10rem;
 }
 .mensaje {
     display: grid;
