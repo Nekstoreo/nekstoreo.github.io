@@ -1,0 +1,75 @@
+@media screen and (max-width: 700px) {
+
+    /* Header container */
+    .header-container {
+        flex-direction: column;
+        padding: 5%;
+        width: auto;
+    }
+
+    /* Banner */
+    .banner {
+        margin: 1rem;
+    }
+
+    /* Header nav */
+    .header-nav {
+        float: none;
+        text-align: center;
+        margin: 1%;
+    }
+
+    /* Header nav li */
+    .header-nav li {
+        width: 90%;
+        height: 30px;
+        margin: 1%;
+        text-align: center;
+        box-shadow: none;
+    }
+
+    /* Among Us */
+    .amongus {
+        display: none;
+    }
+
+    /* Main content */
+    .main-content {
+        flex-direction: column;
+    }
+
+    /* Main content h1 */
+    .main-content h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    /* Main content h3 */
+    .main-content h3 {
+        font-size: 1rem;
+    }
+
+    /* Main content p */
+    .main-content p {
+        font-size: 1rem;
+        margin: 0 0 10px 0;
+    }
+
+    /* Main content a */
+    .main-content a {
+        font-size: 14px;
+    }
+
+    /* Main content img */
+    .main-content img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+
+    /* Footer */
+    footer {
+        text-align: center;
+    }
+}

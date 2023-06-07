@@ -13,7 +13,8 @@
 }
 
 .container {
-    height: 200px;
+    height: 20rem;
+    width: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
