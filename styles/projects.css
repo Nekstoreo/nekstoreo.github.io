@@ -1,35 +1,26 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@keyframes mensajeAnimacion {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        color: blue;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 1;
+        color: purple;
+    }
 }
-html{
-    font-size: 62.5%;
-}
-.container{
+
+.container {
+    height: 200px;
+    align-items: center;
+    justify-content: center;
     display: flex;
-    flex-wrap: wrap;
+    animation-name: mensajeAnimacion;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
 }
-.c1, .c2, .c3, .c4, .c5{
-    width: 100%;
-    min-width: 150px;
-    height: 150px;
-}
-.c1{
-    background-color: #003476;
-}
-.c2{
-    background-color: #005b96;
-}
-.c3{
-    background-color: #6497b1;
-}
-.c4{
-    background-color: #b3cde0;
-    height: auto;
-}
-.c5{
-    background-color: #f0f0f0;
-}
-
-
