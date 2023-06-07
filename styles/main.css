@@ -19,9 +19,9 @@ html {
     text-align: center;
 }
 
-.header-container h1 {
-    font-size: 2rem;
-    font-weight: bold;
+.banner {
+    width: 17rem;
+    margin: 0.5rem;
 }
 .header-container h1::after {
     content: "";
@@ -52,7 +52,9 @@ html {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-
+.amongus {
+    margin-bottom: 1rem;
+}
 
 .header-nav a {
     color: inherit;
