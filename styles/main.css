@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,27 +6,32 @@
 
 html {
     font-family: "Roboto Mono", monospace;
-    color: #333;
+    color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
 
 .header-container {
-    background-color: #f2f2f2;
-    display:  flex;
+    background-color: #131313;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
 }
+
 body {
     place-items: center;
     min-height: 100vh;
+    background-color: #131313;
 }
 
 .banner {
     width: 17rem;
     margin: 0.5rem;
+    /* invertimos el color del banner */
+    filter: invert(1);
 }
+
 .header-container h1::after {
     content: "";
     display: block;
@@ -38,37 +43,26 @@ body {
     width: auto;
     float: left;
     list-style-type: none;
-    margin: 0.3rem;
     justify-content: space-evenly;
 }
-
-.header-nav li {
-    display: inline-block;
-    width: 8rem;
-    height: 2rem;
-    margin: 0.1rem;
-    line-height: 2rem;
-    text-align: center;
-    border-radius: 1rem;
-    background-color: #ccc;
-    color: black;
-    transition: 0.5s;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.amongus {
-    margin: 1%;
-}
-.glitch {
-    font-size: 8rem;
-    font-weight: 700;
+.header-nav-item{
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: #FAFAFA;
     text-transform: uppercase;
-    position: relative;
-  
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.header-nav-item:active{
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
 
 .header-nav a {
     color: inherit;
@@ -84,6 +78,7 @@ body {
     flex-direction: column;
     margin: 1% 10%;
 }
+
 .main-content h1 {
     font-size: 1rem;
     margin: 1rem;
@@ -99,7 +94,7 @@ body {
     text-align: justify;
     font-size: 1.2rem;
     margin: 10px 20px 10px 20px;
-    width: 90%;
+    width: 70%;
 }
 
 .main-content a {
@@ -122,84 +117,30 @@ body {
 .video-container {
     align-self: center;
     margin: 20px 0 20px 0;
-    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.formulario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left !important;
-    width: 90%;
-    margin: 1rem;
-    padding: 2rem;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.formulario label {
-    margin-bottom: 10px;
-    width: 100%;
-}
-.formulario h4{
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
-}
-
-.formulario label span {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.formulario input,
-.formulario textarea,
-.formulario select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 95%;
-    font-size: 16px;
-}
-
-.formulario input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: auto;
-    font-size: 16px;
-    margin-top: 20px;
 }
 
 footer {
-    background-color: #f2f2f2;
+    background-color: #131313;
     padding: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    color: #555;
-  }
-  
-  footer p {
+    color: #f2f2f2;
+}
+
+footer p {
     margin: 0;
-  }
-  
-  footer a {
+}
+
+footer a {
     color: #555;
     text-decoration: none;
-  }
-  
-  footer a:hover {
+}
+
+footer a:hover {
     text-decoration: underline;
-  }
-  
+}

@@ -20,21 +20,16 @@
     }
 
     /* Header nav li */
-    .header-nav li {
-        width: 90%;
-        height: 30px;
+    .header-nav-item {
+        width: 70%;
+        height: auto;
         margin: 1%;
         text-align: center;
         box-shadow: none;
     }
 
-    /* Among Us */
-    .amongus {
-        display: none;
-    }
-
     main{
-        padding: 10%;
+        padding: 0.7rem;
     }
 
     /* Main content */
@@ -71,7 +66,7 @@
         width: 100%;
     }
     .video-container {
-        width: 100%;
+        width: 80%;
     }
 
 
