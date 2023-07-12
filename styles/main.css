@@ -12,7 +12,6 @@ html {
 }
 
 .header-container {
-    background-color: #131313;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -23,20 +22,26 @@ body {
     place-items: center;
     min-height: 100vh;
     background-color: #131313;
+    background-image: url("/media/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /*Sombra en todo el texto*/
 }
 
 .banner {
     width: 17rem;
     margin: 0.5rem;
-    /* invertimos el color del banner */
-    filter: invert(1);
+    /* invertimos el color del banner 
+    filter: invert(1);*/
+    /*Agregamos un halo de luz blanca en el logo del banner*/
+    filter: drop-shadow(0 0 0.75rem #fff);
 }
 
 .header-container h1::after {
     content: "";
     display: block;
     height: 2px;
-    background-color: #000;
 }
 
 .header-nav {
@@ -45,7 +50,8 @@ body {
     list-style-type: none;
     justify-content: space-evenly;
 }
-.header-nav-item{
+
+.header-nav-item {
     font-family: monospace;
     font-size: 1.1rem;
     color: #FAFAFA;
@@ -58,7 +64,8 @@ body {
     cursor: pointer;
     margin: 10px 0;
 }
-.header-nav-item:active{
+
+.header-nav-item:active {
     box-shadow: none;
     transform: translate(3px, 3px);
 }
@@ -90,13 +97,6 @@ body {
     text-align: center;
 }
 
-.main-content p {
-    text-align: justify;
-    font-size: 1.2rem;
-    margin: 10px 20px 10px 20px;
-    width: 70%;
-}
-
 .main-content a {
     font-size: 16px;
     text-decoration: none;
@@ -114,6 +114,18 @@ body {
     align-self: center;
 }
 
+.quote-of-the-day {
+    margin: 10px 20px 10px 20px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Sans serif", monospace;
+    text-align: center;
+    font-size: 1.7rem;
+    text-shadow: 3px 3px 2px #474747;
+}
+
 .video-container {
     align-self: center;
     margin: 20px 0 20px 0;
@@ -124,7 +136,6 @@ body {
 }
 
 footer {
-    background-color: #131313;
     padding: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
