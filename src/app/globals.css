@@ -1,26 +1,174 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Font variables */
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  /* Custom Colors for Portfolio */
+  --portfolio-black: #0A0A0A;
+  --portfolio-amber: #FFA000;
+  --portfolio-amber-15: rgba(255, 160, 0, 0.15);
+  --portfolio-amber-25: rgba(255, 160, 0, 0.25);
+  --portfolio-text: #F5F5F5;
+  --portfolio-text-muted: #A1A1AA;
+  
+  /* shadcn/ui CSS variables */
+  --background: var(--portfolio-black);
+  --foreground: var(--portfolio-text);
+  --card: rgba(255, 255, 255, 0.05);
+  --card-foreground: var(--portfolio-text);
+  --popover: rgba(255, 255, 255, 0.05);
+  --popover-foreground: var(--portfolio-text);
+  --primary: var(--portfolio-amber);
+  --primary-foreground: var(--portfolio-black);
+  --secondary: rgba(255, 255, 255, 0.1);
+  --secondary-foreground: var(--portfolio-text);
+  --muted: rgba(255, 255, 255, 0.05);
+  --muted-foreground: var(--portfolio-text-muted);
+  --accent: var(--portfolio-amber-15);
+  --accent-foreground: var(--portfolio-text);
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: var(--portfolio-amber-25);
+  --radius: 0.5rem;
+  
+  /* Custom ambient glow effect */
+  --ambient-glow: radial-gradient(
+    ellipse 800px 600px at top left,
+    rgba(255, 160, 0, 0.1) 0%,
+    rgba(255, 160, 0, 0.05) 30%,
+    transparent 70%
+  );
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: hsl(var(--border));
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--portfolio-black);
+  background-image: var(--ambient-glow);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--portfolio-text);
+  font-family: var(--font-serif);
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 160, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 160, 0, 0.5);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+p, span, div, button, input, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Custom component styles */
+.gradient-text {
+  background: linear-gradient(to right, #FFA000, #FFB800);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.amber-glow {
+  box-shadow: 0 0 30px rgba(255, 160, 0, 0.2);
+}
+
+.section-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
