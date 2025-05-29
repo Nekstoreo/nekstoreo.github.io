@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export function HeroSection() {
   return (
@@ -13,6 +14,26 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
+            className="mb-8"
+          >
+            <div className="relative mx-auto w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/20 to-amber-600/20 blur-xl"></div>
+              <Image
+                src="https://avatars.githubusercontent.com/u/97989097?v=4"
+                alt="Nestor Gutierrez - Backend Developer"
+                width={192}
+                height={192}
+                className="relative rounded-full border-2 border-amber-400/30 shadow-2xl shadow-amber-500/10 hover:scale-105 transition-transform duration-300"
+                priority
+              />
+            </div>
+          </motion.div>
+          
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-6">
             <span className="gradient-text">Nestor</span>{' '}
             <span className="text-white">Gutierrez</span>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Code, Coffee } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import Image from 'next/image';
 
 const timeline = [
   {
@@ -59,6 +60,34 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="space-y-8"
           >
+            {/* Profile Image Section */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
+              className="glass-card p-8 rounded-lg mb-8"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/20 to-amber-600/20 blur-lg scale-110"></div>
+                  <Image
+                    src="https://avatars.githubusercontent.com/u/97989097?v=4"
+                    alt="Nestor Gutierrez - Backend Developer"
+                    width={120}
+                    height={120}
+                    className="relative rounded-full border-2 border-amber-400/30 shadow-xl shadow-amber-500/10"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Nestor Gutierrez
+                </h3>
+                <p className="text-amber-400 mb-3">@Nekstoreo</p>
+                <p className="text-gray-400 text-sm">
+                  Backend Developer / Reluctant Frontender
+                </p>
+              </div>
+            </motion.div>
+
             <div className="glass-card p-8 rounded-lg">
               <h3 className="text-2xl font-semibold text-amber-400 mb-6">
                 Professional Overview
