@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import "tailwindcss";
-
 :root {
   /* Font variables */
   --font-serif: "Cormorant Garamond", serif;
+  --font-spectral: "Spectral", serif;
   --font-sans: "Inter", sans-serif;
   
   /* Custom Colors for Portfolio */
@@ -35,13 +36,11 @@
   --ring: var(--portfolio-amber-25);
   --radius: 0.5rem;
   
-  /* Custom ambient glow effect */
-  --ambient-glow: radial-gradient(
-    ellipse 800px 600px at top left,
-    rgba(255, 160, 0, 0.1) 0%,
-    rgba(255, 160, 0, 0.05) 30%,
-    transparent 70%
-  );
+  /* Custom ambient glow effect: multiple irregular amber lights from top */
+  --ambient-glow: 
+    radial-gradient(ellipse 700px 400px at 15% 0%, rgba(255, 160, 0, 0.18) 0%, rgba(255, 160, 0, 0.07) 60%, transparent 100%),
+    radial-gradient(ellipse 500px 300px at 70% 0%, rgba(255, 160, 0, 0.13) 0%, rgba(255, 160, 0, 0.05) 60%, transparent 100%),
+    radial-gradient(ellipse 350px 200px at 40% 8%, rgba(255, 160, 0, 0.10) 0%, rgba(255, 160, 0, 0.04) 70%, transparent 100%);
 }
 
 * {
@@ -53,8 +52,9 @@ body {
   background-image: var(--ambient-glow);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-size: cover;
   color: var(--portfolio-text);
-  font-family: var(--font-serif);
+  font-family: var(--font-spectral), serif;
   min-height: 100vh;
 }
 
@@ -76,13 +76,16 @@ body {
   background: rgba(255, 160, 0, 0.5);
 }
 
-/* Typography */
+/* Tipografía personalizada */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-serif), serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-p, span, div, button, input, textarea {
-  font-family: var(--font-sans);
+p, span, div, button, input, textarea, li, ul, ol, a, label, small, strong {
+  font-family: var(--font-spectral), serif;
+  font-weight: 400;
 }
 
 /* Custom component styles */
