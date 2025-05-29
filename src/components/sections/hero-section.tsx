@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative section-padding">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative section-padding">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

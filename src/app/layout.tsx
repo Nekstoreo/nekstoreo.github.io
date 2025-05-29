@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Spectral } from "next/font/google";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { ParallaxBackground } from "@/components/parallax-background";
 import "./globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -33,11 +35,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${spectral.variable} antialiased`}
+        className={`${cormorantGaramond.variable} ${spectral.variable} antialiased overflow-x-hidden max-w-full`}
       >
-        {children}
+        <ParallaxBackground />
+        <ScrollProgress />
+        <div className="w-full max-w-full overflow-x-hidden">
+          {children}
+        </div>
       </body>
     </html>
   );
