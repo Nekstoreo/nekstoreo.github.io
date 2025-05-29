@@ -5,12 +5,13 @@ import { useEffect, useRef, useState } from 'react';
 interface UseScrollAnimationOptions {
   threshold?: number;
   rootMargin?: string;
+  triggerOnce?: boolean; // Si true, la animación solo se ejecuta una vez
 }
 
 export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
-  const { threshold = 0.1, rootMargin = '0px' } = options;
+  const { threshold = 0.1, rootMargin = '0px', triggerOnce = false } = options;
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = elementRef.current;
@@ -20,7 +21,13 @@ export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(element);
+          if (triggerOnce) {
+            observer.unobserve(element);
+          }
+        } else {
+          if (!triggerOnce) {
+            setIsVisible(false);
+          }
         }
       },
       {
@@ -34,7 +41,7 @@ export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
     return () => {
       observer.unobserve(element);
     };
-  }, [threshold, rootMargin]);
+  }, [threshold, rootMargin, triggerOnce]);
 
   return { isVisible, elementRef };
 }
