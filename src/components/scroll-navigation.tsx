@@ -86,21 +86,13 @@ export function ScrollNavigation() {
             <motion.button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`group relative flex items-center justify-end transition-all duration-300 ${
+              className={`group relative transition-all duration-300 ${
                 activeSection === item.id ? 'scale-110' : 'hover:scale-105'
               }`}
-              whileHover={{ x: -5 }}
+              whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
+              title={item.label} // Solo tooltip para accesibilidad
             >
-              <span
-                className={`absolute right-8 px-3 py-1 rounded-md text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-                  activeSection === item.id
-                    ? 'bg-amber-500/20 text-amber-400 opacity-100'
-                    : 'bg-gray-800/80 text-gray-400 opacity-0 group-hover:opacity-100'
-                } backdrop-blur-sm`}
-              >
-                {item.label}
-              </span>
               <div
                 className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
                   activeSection === item.id
