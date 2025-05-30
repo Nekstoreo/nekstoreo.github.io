@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Nestor Gutierrez
 
-## Getting Started
+Portfolio profesional construido con Next.js 15, TypeScript, Tailwind CSS y Framer Motion.
 
-First, run the development server:
+## 🚀 Deploy en GitHub Pages
+
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages en `nekstoreo.github.io`.
+
+### Configuración inicial:
+
+1. **Crear el repositorio en GitHub:**
+   ```bash
+   # Crea un repositorio llamado 'nekstoreo.github.io' en tu cuenta de GitHub
+   ```
+
+2. **Conectar tu proyecto local:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/nekstoreo/nekstoreo.github.io.git
+   git push -u origin main
+   ```
+
+3. **Configurar GitHub Pages:**
+   - Ve a Settings > Pages en tu repositorio
+   - Source: Deploy from a branch
+   - Branch: gh-pages
+   - Folder: / (root)
+
+### Deploy automático:
+
+El proyecto se despliega automáticamente cuando haces push a la rama `main` gracias a GitHub Actions.
+
+### Deploy manual:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Construir el proyecto
+pnpm build
+
+# O usar el script personalizado
+pnpm deploy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Desarrollo local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Instalar dependencias
+pnpm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Ejecutar en modo desarrollo
+pnpm dev
 
-## Learn More
+# Construir para producción
+pnpm build
 
-To learn more about Next.js, take a look at the following resources:
+# Servir build de producción
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Stack Tecnológico
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework:** Next.js 15 (App Router)
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS
+- **Componentes:** shadcn/ui
+- **Animaciones:** Framer Motion
+- **Deploy:** GitHub Pages
+- **Package Manager:** pnpm
 
-## Deploy on Vercel
+## 📁 Estructura del proyecto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/                 # App Router pages
+├── components/          # Componentes React
+│   ├── sections/       # Secciones del portfolio
+│   └── ui/            # Componentes UI (shadcn)
+├── hooks/              # Custom hooks
+└── lib/                # Utilidades
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌟 Características
+
+- ✅ Diseño responsive (mobile-first)
+- ✅ Animaciones suaves con Framer Motion
+- ✅ Navegación lateral con scroll tracking
+- ✅ Tema oscuro con acentos amber
+- ✅ Optimizado para rendimiento
+- ✅ Deploy automático en GitHub Pages
+
+---
+
+**URL del sitio:** [nekstoreo.github.io](https://nekstoreo.github.io)
